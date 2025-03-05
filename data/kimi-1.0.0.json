@@ -1,0 +1,265 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Kimi API",
+    "description": "API for interacting with the Kimi large language model.",
+    "version": "1.0.0"
+  },
+  "host": "api.moonshot.cn",
+  "basePath": "/v1",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/chat/completions": {
+      "post": {
+        "summary": "Create a chat completion",
+        "description": "Sends a message to the Kimi model and returns a response.",
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "The model to use for generating the response.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["moonshot-v1-8k", "moonshot-v1-32k", "moonshot-v1-128k"]
+            }
+          },
+          {
+            "name": "messages",
+            "in": "body",
+            "description": "A list of messages in the conversation.",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "role": {
+                    "type": "string",
+                    "enum": ["system", "user", "assistant"]
+                  },
+                  "content": {
+                    "type": "string"
+                  }
+                },
+                "required": ["role", "content"]
+              }
+            }
+          },
+          {
+            "name": "temperature",
+            "in": "body",
+            "description": "The temperature to use for generating the response.",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "default": 0.3
+            }
+          },
+          {
+            "name": "response_format",
+            "in": "body",
+            "description": "The format of the response.",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": ["text", "json_object"]
+                }
+              },
+              "required": ["type"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "choices": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "object",
+                        "properties": {
+                          "content": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/document/interpretation": {
+      "post": {
+        "summary": "Interpret a document",
+        "description": "Sends a document to the Kimi model for interpretation and returns a response.",
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "The model to use for generating the response.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["moonshot-v1-8k", "moonshot-v1-32k", "moonshot-v1-128k"]
+            }
+          },
+          {
+            "name": "document",
+            "in": "body",
+            "description": "The document to be interpreted.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          },
+          {
+            "name": "temperature",
+            "in": "body",
+            "description": "The temperature to use for generating the response.",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "default": 0.3
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "choices": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "object",
+                        "properties": {
+                          "content": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/image/analysis": {
+      "post": {
+        "summary": "Analyze an image",
+        "description": "Sends an image to the Kimi model for analysis and returns a response.",
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "The model to use for generating the response.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["moonshot-v1-8k", "moonshot-v1-32k", "moonshot-v1-128k"]
+            }
+          },
+          {
+            "name": "image",
+            "in": "body",
+            "description": "The image to be analyzed.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          },
+          {
+            "name": "temperature",
+            "in": "body",
+            "description": "The temperature to use for generating the response.",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "default": 0.3
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "choices": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "object",
+                        "properties": {
+                          "content": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/token/check": {
+      "post": {
+        "summary": "Check refresh token validity",
+        "description": "Checks if the provided refresh token is valid.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "body",
+            "description": "The refresh token to check.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "live": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
