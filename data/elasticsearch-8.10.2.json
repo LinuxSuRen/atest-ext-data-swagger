@@ -1,0 +1,414 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Elasticsearch REST API",
+    "version": "8.10.2",
+    "title": "Elasticsearch API"
+  },
+  "host": "localhost:9200",
+  "basePath": "/",
+  "schemes": ["http"],
+  "paths": {
+    "/{index}": {
+      "get": {
+        "tags": ["Index"],
+        "summary": "Get index information",
+        "description": "Returns information about one or more indices.",
+        "operationId": "get-index",
+        "parameters": [
+          {
+            "name": "index",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the index or index pattern."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "object",
+                  "properties": {
+                    "aliases": {
+                      "type": "object"
+                    },
+                    "mappings": {
+                      "type": "object"
+                    },
+                    "settings": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Index"],
+        "summary": "Delete an index",
+        "description": "Deletes an index.",
+        "operationId": "delete-index",
+        "parameters": [
+          {
+            "name": "index",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the index to delete."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Index deleted successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "acknowledged": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{index}/_create/{id}": {
+      "put": {
+        "tags": ["Document"],
+        "summary": "Create a document",
+        "description": "Creates a new document in an index.",
+        "operationId": "create-document",
+        "parameters": [
+          {
+            "name": "index",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the index."
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The ID of the document."
+          }
+        ],
+        "requestBody": {
+          "description": "The document content",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Document created successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_index": {
+                  "type": "string"
+                },
+                "_id": {
+                  "type": "string"
+                },
+                "_version": {
+                  "type": "integer"
+                },
+                "result": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{index}/_doc/{id}": {
+      "get": {
+        "tags": ["Document"],
+        "summary": "Get a document",
+        "description": "Retrieves a document by its ID.",
+        "operationId": "get-document",
+        "parameters": [
+          {
+            "name": "index",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the index."
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The ID of the document."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Document retrieved successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_index": {
+                  "type": "string"
+                },
+                "_id": {
+                  "type": "string"
+                },
+                "_source": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Document"],
+        "summary": "Delete a document",
+        "description": "Deletes a document by its ID.",
+        "operationId": "delete-document",
+        "parameters": [
+          {
+            "name": "index",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the index."
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The ID of the document."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Document deleted successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_index": {
+                  "type": "string"
+                },
+                "_id": {
+                  "type": "string"
+                },
+                "result": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{index}/_search": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Search documents",
+        "description": "Executes a search query against one or more indices.",
+        "operationId": "search-documents",
+        "parameters": [
+          {
+            "name": "index",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the index or index pattern."
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "type": "string",
+            "description": "The search query string."
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "type": "integer",
+            "description": "The number of hits to return."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search results",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "took": {
+                  "type": "integer"
+                },
+                "hits": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "hits": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "_index": {
+                            "type": "string"
+                          },
+                          "_id": {
+                            "type": "string"
+                          },
+                          "_source": {
+                            "type": "object"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Search"],
+        "summary": "Search documents with a request body",
+        "description": "Executes a search query using a request body.",
+        "operationId": "search-documents-body",
+        "parameters": [
+          {
+            "name": "index",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the index or index pattern."
+          }
+        ],
+        "requestBody": {
+          "description": "The search query",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "object"
+                  },
+                  "size": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Search results",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "took": {
+                  "type": "integer"
+                },
+                "hits": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "hits": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "_index": {
+                            "type": "string"
+                          },
+                          "_id": {
+                            "type": "string"
+                          },
+                          "_source": {
+                            "type": "object"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/_cluster/health": {
+      "get": {
+        "tags": ["Cluster"],
+        "summary": "Get cluster health",
+        "description": "Returns basic information about the health of the cluster.",
+        "operationId": "get-cluster-health",
+        "parameters": [
+          {
+            "name": "index",
+            "in": "query",
+            "type": "string",
+            "description": "Limit the information returned to a specific index."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cluster health",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cluster_name": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "timed_out": {
+                  "type": "boolean"
+                },
+                "number_of_nodes": {
+                  "type": "integer"
+                },
+                "number_of_data_nodes": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}
