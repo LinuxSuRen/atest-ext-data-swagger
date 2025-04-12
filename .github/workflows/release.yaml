@@ -13,7 +13,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  goreleaser:
+  publish:
     runs-on: ubuntu-20.04
     if: github.ref != 'refs/heads/master'
     steps:
