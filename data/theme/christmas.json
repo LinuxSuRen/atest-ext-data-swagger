@@ -58,8 +58,8 @@
     "--el-fill-color-dark": "#F5DEB3",
     "--el-fill-color-darker": "#E6C9A8",
     "--el-fill-color-blank": "#FFFFFF",
-    "--el-christmas-snowflake": "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1RDhBQTgiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xMiAzdjE4TTMgMTJoMTgiLz48cGF0aCBkPSJNMyAzbDQuNSA0LjUiLz48cGF0aCBkPSJNMjEgM2wtNC41IDQuNSIvPjxwYXRoIGQ9Ik0zIDIxbDQuNS00LjUiLz48cGF0aCBkPSJNMjEgMjFsLTQuNS00LjUiLz48L3N2Zz4=')", // 雪花SVG
-    "--el-christmas-pattern": "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(218,165,32,0.1) 10px, rgba(218,165,32,0.1) 20px)"  // 金色斜纹
+    "--el-christmas-snowflake": "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1RDhBQTgiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xMiAzdjE4TTMgMTJoMTgiLz48cGF0aCBkPSJNMyAzbDQuNSA0LjUiLz48cGF0aCBkPSJNMjEgM2wtNC41IDQuNSIvPjxwYXRoIGQ9Ik0zIDIxbDQuNS00LjUiLz48cGF0aCBkPSJNMjEgMjFsLTQuNS00LjUiLz48L3N2Zz4=')",
+    "--el-christmas-pattern": "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(218,165,32,0.1) 10px, rgba(218,165,32,0.1) 20px)"
   },
   "common": {
     "--el-border-width": "1px",
