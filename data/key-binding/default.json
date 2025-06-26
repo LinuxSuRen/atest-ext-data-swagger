@@ -15,7 +15,7 @@
                     "keys": [
                         "Ctrl+Shift+K"
                     ],
-                    "action": "saveQuery",
+                    "action": "executeWithSelectedQuery",
                     "description": "Execute selected text as query"
                 }, {
                     "keys": [
