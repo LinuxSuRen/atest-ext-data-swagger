@@ -1,0 +1,109 @@
+{
+    "name": "Default Key Bindings",
+    "pages": [
+        {
+            "name": "DataManager",
+            "bindings": [
+                {
+                    "keys": [
+                        "Ctrl+E",
+                        "Ctrl+Enter"
+                    ],
+                    "action": "executeQuery",
+                    "description": "Execute query"
+                }, {
+                    "keys": [
+                        "Ctrl+Shift+K"
+                    ],
+                    "action": "saveQuery",
+                    "description": "Execute selected text as query"
+                }, {
+                    "keys": [
+                        "Ctrl+Shift+O"
+                    ],
+                    "action": "executeQueryWithoutShowingNativeSQL",
+                    "description": "Execute query without showing native SQL"
+                }
+            ]
+        }, {
+            "name": "TestSuite",
+            "bindings": [
+                {
+                    "keys": [
+                        "Alt+N",
+                        "Alt+dead"
+                    ],
+                    "action": "openNewTestCaseDialog",
+                    "description": "Open new test case dialog"
+                }, {
+                    "keys": [
+                        "Alt+S",
+                        "Alt+ß"
+                    ],
+                    "action": "saveTestSuite",
+                    "description": "Save test suite"
+                }
+            ]
+        }, {
+            "name": "TestCase",
+            "bindings": [
+                {
+                    "keys": [
+                        "Alt+S",
+                        "Alt+ß"
+                    ],
+                    "action": "sendRequest",
+                    "description": "Send the request"
+                }, {
+                    "keys": [
+                        "Alt+KeyD"
+                    ],
+                    "action": "openDuplicateTestCaseDialog",
+                    "description": "Duplicate the test case"
+                }, {
+                    "keys": [
+                        "Alt+KeyO"
+                    ],
+                    "action": "openOutputTab",
+                    "description": "Open the output tab"
+                }, {
+                    "keys": [
+                        "Alt+KeyB"
+                    ],
+                    "action": "openBodyTab",
+                    "description": "Open the body tab"
+                }, {
+                    "keys": [
+                        "Alt+KeyH"
+                    ],
+                    "action": "openHeaderTab",
+                    "description": "Open the header tab"
+                }, {
+                    "keys": [
+                        "Alt+KeyQ"
+                    ],
+                    "action": "openQueryTab",
+                    "description": "Open the query tab"
+                }
+            ]
+        }, {
+            "name": "StoreManager",
+            "bindings": [
+                {
+                    "keys": [
+                        "Alt+KeyE",
+                        "Ctrl+N"
+                    ],
+                    "action": "addStore",
+                    "description": "Add a new store"
+                }, {
+                    "keys": [
+                        "Alt+KeyR"
+                    ],
+                    "action": "loadStores",
+                    "description": "Refresh the store lis"
+                }
+            ]
+        }
+    ]
+}
