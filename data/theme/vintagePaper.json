@@ -149,6 +149,9 @@
       "--el-notification-title-color": "var(--el-text-color-primary)",
       "--el-notification-close-color": "var(--el-text-color-secondary)",
       "--el-notification-close-hover-color": "var(--el-text-color-regular)"
+    },
+    "editor": {
+      "--payload-editor-height": "100%"
     }
   }
 }
