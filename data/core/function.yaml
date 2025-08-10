@@ -1,0 +1,88 @@
+items:
+  - name: randAge
+    render: |
+      {{ randInt 18 60 }}
+  - name: randFruit
+    render: |
+      {{ randFromList "apple" "banana" "cherry" "date" "elderberry" }}
+  - name: randCity
+    render: |
+      {{ randFromList "New York" "Los Angeles" "Chicago" "Houston" "Phoenix" }}
+  - name: randColor
+    render: |
+      {{ randFromList "red" "green" "blue" "yellow" "purple" }}
+  - name: randShape
+    render: |
+      {{ randFromList "circle" "square" "triangle" "rectangle" "oval" }}
+  - name: randAnimal
+    render: |
+      {{ randFromList "dog" "cat" "rabbit" "hamster" "parrot" }}
+  - name: randCountry
+    render: |
+      {{ randFromList "USA" "Canada" "UK" "Australia" "Germany" }}
+  - name: randVehicle
+    render: |
+      {{ randFromList "car" "bike" "bus" "train" "plane" }}
+  - name: randProfession
+    render: |
+      {{ randFromList "doctor" "engineer" "teacher" "artist" "chef" }}
+  - name: randHobby
+    render: |
+      {{ randFromList "reading" "traveling" "gaming" "cooking" "hiking" }}
+  - name: randMovieGenre
+    render: |
+      {{ randFromList "action" "comedy" "drama" "horror" "sci-fi" }}
+  - name: randMusicGenre
+    render: |
+      {{ randFromList "rock" "pop" "jazz" "classical" "hip-hop" }}
+  - name: randBookGenre
+    render: |
+      {{ randFromList "fiction" "non-fiction" "mystery" "fantasy" "biography" }}
+  - name: randSeason
+    render: |
+      {{ randFromList "spring" "summer" "autumn" "winter" }}
+  - name: randDayOfWeek
+    render: |
+      {{ randFromList "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday" }}
+  - name: randMonth
+    render: |
+      {{ randFromList "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" }}
+  - name: randWeather
+    render: |
+      {{ randFromList "sunny" "rainy" "cloudy" "snowy" "windy" }}
+  - name: randEmotion
+    render: |
+      {{ randFromList "happy" "sad" "angry" "excited" "nervous" }}
+  - name: randCuisine
+    render: |
+      {{ randFromList "Italian" "Chinese" "Mexican" "Indian" "French" }}
+  - name: randDrink
+    render: | 
+      {{ randFromList "water" "coffee" "tea" "juice" "soda" }}
+  - name: randSport
+    render: |
+      {{ randFromList "soccer" "basketball" "tennis" "baseball" "swimming" }}
+  - name: randInstrument
+    render: |
+      {{ randFromList "guitar" "piano" "drums" "violin" "flute" }}
+  - name: randTechBrand
+    render: |
+      {{ randFromList "Apple" "Google" "Microsoft" "Amazon" "Facebook" }}
+  - name: randSocialMedia
+    render: |
+      {{ randFromList "Facebook" "Twitter" "Instagram" "LinkedIn" "TikTok" }}
+  - name: randProgrammingLanguage
+    render: |
+      {{ randFromList "Python" "JavaScript" "Java" "C#" "Ruby" }}
+  - name: randOperatingSystem
+    render: |
+      {{ randFromList "Windows" "macOS" "Linux" "Android" "iOS" }}
+  - name: randWebBrowser
+    render: |
+      {{ randFromList "Chrome" "Firefox" "Safari" "Edge" "Opera" }}
+  - name: randCloudProvider
+    render: |
+      {{ randFromList "AWS" "Azure" "Google Cloud" "IBM Cloud" "Oracle Cloud" }}
+  - name: randDatabase
+    render: |
+      {{ randFromList "MySQL" "PostgreSQL" "MongoDB" "SQLite" "Redis" }}

@@ -1,0 +1,28 @@
+items:
+  - name: atest-store-orm
+    type: store
+    dependencies:
+      - name: atest-store-database
+  - name: atest-store-database
+    dependencies:
+      - name: atest-store-database
+  - name: atest-store-cassandra
+    dependencies:
+      - name: atest-store-database
+  - name: atest-store-iotdb
+    dependencies:
+      - name: atest-store-database
+  - name: atest-store-etcd
+    dependencies:
+      - name: atest-store-database
+  - name: atest-store-redis
+    dependencies:
+      - name: atest-store-database
+  - name: atest-store-elasticsearch
+    dependencies:
+      - name: atest-store-database
+  - name: atest-store-opengemini
+    dependencies:
+      - name: atest-store-database
+  - name: atest-store-git
+  - name: atest-store-s3
