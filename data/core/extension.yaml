@@ -1,6 +1,5 @@
 items:
   - name: atest-store-orm
-    type: store
     params:
       - key: driver
         defaultValue: mysql
