@@ -1,0 +1,88 @@
+items:
+  - name: randAge
+    render: |
+      {{ randInt 18 60 }}
+  - name: randFruit
+    render: |
+      {{ randEnum "apple" "banana" "cherry" "date" "elderberry" }}
+  - name: randCity
+    render: |
+      {{ randEnum "New York" "Los Angeles" "Chicago" "Houston" "Phoenix" }}
+  - name: randColor
+    render: |
+      {{ randEnum "red" "green" "blue" "yellow" "purple" }}
+  - name: randShape
+    render: |
+      {{ randEnum "circle" "square" "triangle" "rectangle" "oval" }}
+  - name: randAnimal
+    render: |
+      {{ randEnum "dog" "cat" "rabbit" "hamster" "parrot" }}
+  - name: randCountry
+    render: |
+      {{ randEnum "USA" "Canada" "UK" "Australia" "Germany" }}
+  - name: randVehicle
+    render: |
+      {{ randEnum "car" "bike" "bus" "train" "plane" }}
+  - name: randProfession
+    render: |
+      {{ randEnum "doctor" "engineer" "teacher" "artist" "chef" }}
+  - name: randHobby
+    render: |
+      {{ randEnum "reading" "traveling" "gaming" "cooking" "hiking" }}
+  - name: randMovieGenre
+    render: |
+      {{ randEnum "action" "comedy" "drama" "horror" "sci-fi" }}
+  - name: randMusicGenre
+    render: |
+      {{ randEnum "rock" "pop" "jazz" "classical" "hip-hop" }}
+  - name: randBookGenre
+    render: |
+      {{ randEnum "fiction" "non-fiction" "mystery" "fantasy" "biography" }}
+  - name: randSeason
+    render: |
+      {{ randEnum "spring" "summer" "autumn" "winter" }}
+  - name: randDayOfWeek
+    render: |
+      {{ randEnum "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday" }}
+  - name: randMonth
+    render: |
+      {{ randEnum "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" }}
+  - name: randWeather
+    render: |
+      {{ randEnum "sunny" "rainy" "cloudy" "snowy" "windy" }}
+  - name: randEmotion
+    render: |
+      {{ randEnum "happy" "sad" "angry" "excited" "nervous" }}
+  - name: randCuisine
+    render: |
+      {{ randEnum "Italian" "Chinese" "Mexican" "Indian" "French" }}
+  - name: randDrink
+    render: | 
+      {{ randEnum "water" "coffee" "tea" "juice" "soda" }}
+  - name: randSport
+    render: |
+      {{ randEnum "soccer" "basketball" "tennis" "baseball" "swimming" }}
+  - name: randInstrument
+    render: |
+      {{ randEnum "guitar" "piano" "drums" "violin" "flute" }}
+  - name: randTechBrand
+    render: |
+      {{ randEnum "Apple" "Google" "Microsoft" "Amazon" "Facebook" }}
+  - name: randSocialMedia
+    render: |
+      {{ randEnum "Facebook" "Twitter" "Instagram" "LinkedIn" "TikTok" }}
+  - name: randProgrammingLanguage
+    render: |
+      {{ randEnum "Python" "JavaScript" "Java" "C#" "Ruby" }}
+  - name: randOperatingSystem
+    render: |
+      {{ randEnum "Windows" "macOS" "Linux" "Android" "iOS" }}
+  - name: randWebBrowser
+    render: |
+      {{ randEnum "Chrome" "Firefox" "Safari" "Edge" "Opera" }}
+  - name: randCloudProvider
+    render: |
+      {{ randEnum "AWS" "Azure" "Google Cloud" "IBM Cloud" "Oracle Cloud" }}
+  - name: randDatabase
+    render: |
+      {{ randEnum "MySQL" "PostgreSQL" "MongoDB" "SQLite" "Redis" }}

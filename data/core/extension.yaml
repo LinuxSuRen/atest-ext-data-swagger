@@ -1,0 +1,71 @@
+items:
+  - name: atest-store-orm
+    params:
+      - key: driver
+        defaultValue: mysql
+        enum: ['mysql', 'postgres', 'sqlite']
+        description: 'Supported: mysql, postgres, sqlite, tdengine'
+      - key: database
+        defaultValue: 'atest'
+      - key: historyLimit
+        description: 'Set the limit of the history record count'
+    link: https://github.com/LinuxSuRen/atest-ext-store-orm
+    dependencies:
+      - name: atest-store-database
+  - name: atest-store-database
+    dependencies:
+      - name: atest-store-database
+    link: https://github.com/LinuxSuRen/atest-ext-store-database
+  - name: atest-store-cassandra
+    dependencies:
+      - name: atest-store-database
+    link: 'https://github.com/LinuxSuRen/atest-ext-store-cassandra'
+  - name: atest-store-iotdb
+    dependencies:
+      - name: atest-store-database
+    link: 'https://github.com/LinuxSuRen/atest-ext-store-iotdb'
+  - name: atest-store-etcd
+    dependencies:
+      - name: atest-store-database
+    link: 'https://github.com/LinuxSuRen/atest-ext-store-etcd'
+  - name: atest-store-redis
+    dependencies:
+      - name: atest-store-database
+    link: 'https://github.com/LinuxSuRen/atest-ext-store-redis'
+  - name: atest-store-elasticsearch
+    dependencies:
+      - name: atest-store-database
+    link: 'https://github.com/LinuxSuRen/atest-ext-store-elasticsearch'
+  - name: atest-store-opengemini
+    dependencies:
+      - name: atest-store-database
+    link: 'https://github.com/LinuxSuRen/atest-ext-store-opengemini'
+  - name: atest-store-mongodb
+    params:
+      - key: collection
+      - key: database
+        defaultValue: 'atest'
+    dependencies:
+      - name: atest-store-database
+    link: 'https://github.com/LinuxSuRen/atest-ext-store-mongodb'
+  - name: atest-store-git
+    params:
+      - key: insecure
+      - key: timeout
+      - key: targetpath
+      - key: branch
+      - key: email
+        description: 'See also: git config --local user.email xxx@xxx.com'
+      - key: name
+        description: 'See also: git config --local user.name xxx'
+    link: 'https://github.com/LinuxSuRen/atest-ext-store-git'
+  - name: atest-store-s3
+    params:
+      - key: accesskeyid
+      - key: secretaccesskey
+      - key: sessiontoken
+      - key: region
+      - key: disablessl
+      - key: forcepathstyle
+      - key: bucket
+    link: 'https://github.com/LinuxSuRen/atest-ext-store-s3'
