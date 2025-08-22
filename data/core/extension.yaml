@@ -92,3 +92,9 @@ items:
     categories:
       - store
     link: 'https://github.com/LinuxSuRen/atest-ext-store-s3'
+  - name: atest-store-mermaid
+    dependencies:
+      - name: atest-store-mermaid
+    categories:
+      - ui
+    link: https://github.com/LinuxSuRen/atest-ext-store-mermaid
