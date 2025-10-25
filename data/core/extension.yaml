@@ -98,3 +98,7 @@ items:
     categories:
       - ui
     link: https://github.com/LinuxSuRen/atest-ext-store-mermaid
+  - name: atest-store-math
+    categories:
+      - ui
+    link: https://github.com/LinuxSuRen/atest-ext-store-math
