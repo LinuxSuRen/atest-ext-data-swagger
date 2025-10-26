@@ -101,4 +101,5 @@ items:
   - name: atest-store-math
     categories:
       - ui
+      - education
     link: https://github.com/LinuxSuRen/atest-ext-store-math
