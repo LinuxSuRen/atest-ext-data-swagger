@@ -103,3 +103,8 @@ items:
       - ui
       - education
     link: https://github.com/LinuxSuRen/atest-ext-store-math
+  - name: atest-store-terminal
+    categories:
+      - ui
+      - terminal
+    link: https://github.com/LinuxSuRen/atest-ext-store-terminal
